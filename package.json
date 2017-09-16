@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.1",
+    "connect-redis": "^3.3.0",
     "express": "^4.15.4",
+    "express-session": "^1.15.5",
     "morgan": "^1.8.2",
     "nodemon": "^1.12.1",
     "redis": "^2.8.0"
