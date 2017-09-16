@@ -25,10 +25,28 @@ module.exports = function(app, client) {
         'quantity', quantity
       ], function(err, reply) {
         if(err) {
-          console.log(err);
+          return console.log(err);
         }
         console.log(reply);
         res.redirect('/');
+      })
+    })
+
+
+    .get('/redis-session', function(req, res, next) {
+      //set value to redis session
+      req.session.email1 = "some@gmail.com1"
+
+      //get value from redis session
+      res.send(req.session.email1)
+    })
+    .get('/logout', function(req, res, next){
+      req.session.destroy(function(err) {
+        if (err) {
+          return console.log(err);
+        }
+
+        return res.redirect('/');
       })
     })
 }
