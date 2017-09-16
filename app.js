@@ -23,7 +23,7 @@ app.use(bodyParser.json({type: '*/*'}));
 app.use(morgan('combined'));
 
 //set router
-router(app);
+router(app, client);
 
 //listen for requests
 app.listen(PORT, function(){
